@@ -69,7 +69,7 @@ This is where I import and initialized the ProductCardImageGallery class located
 
 ### Add/Remove All Cart Items Feature
 #### Navigation Template
-To implement this feature will need to modify the header.html template file located `templates/components/common/navigation.html`. Here is where you would add the two buttons needed to add all items and remove all items from/to the cart. The buttons should only appear on category pages, so we must check the page type via `{{#if page_type '===' "category"}}` and if so only then display the buttons.
+To implement this feature will need to modify the navigation.html template file located `templates/components/common/navigation.html`. Here is where you would add the two buttons needed to add all items and remove all items from/to the cart. The buttons should only appear on category pages, so we must check the page type via `{{#if page_type '===' "category"}}` and if so only then display the buttons.
 
 #### Alert Modal Template
 You will need to modify the modal template file located in `templates/components/common/alert/alert-modal.html`. Note you could create a custom alert modal, but I choose to keep it simple and slightly modified the template file and it's corresponding javascript file `assets/js/theme/global/modal.js`
@@ -77,7 +77,7 @@ You will need to modify the modal template file located in `templates/components
 #### CategoryToCart Class
 This class is also initialized in the Category class `onReady()` method which fetches the cart if available and injects the category's products via `{{inject "products" category.products}}` in the category template file. The file is located at `assets/js/theme/common/category-to-cart.js`.  
 
-An instance of this class is responsible for adding and removing all items to cart. Note the only items it will not add to the cart are products that has a options which requires an additional variant id post to the StoreFront API. 
+An instance of this class is responsible for adding and removing all items to cart. Note the only items it will not add to the cart are products that has options which requires an additional variant id to post to the StoreFront API. 
 
 ### Customer Info Banner Feature
 This feature requires enabling banner from within [your control panel](https://support.bigcommerce.com/s/article/Creating-Editing-Banners?language=en_US) and selecting which page it should appear on.
