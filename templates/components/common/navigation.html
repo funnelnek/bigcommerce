@@ -30,6 +30,14 @@
                 {{lang 'common.compare'}} <span class="countPill countPill--positive countPill--alt"></span>
             </a>
         </li>
+        {{#if page_type '===' "category"}}
+            <li class="navUser-item">
+                <button class="navUser-action navUser-item--add-all">Add All To Cart</button>
+            </li>
+            <li class="navUser-item">
+                <button class="navUser-action navUser-item--remove-all">Remove All Items</button>
+            </li>
+        {{/if}}
         {{#if theme_settings.social_icon_placement_top}}
             <li class="navUser-item navUser-item--social">
                 {{> components/common/social-links}}

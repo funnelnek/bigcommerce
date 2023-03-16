@@ -71,6 +71,14 @@
     }
 }
 
+.navUser-item--remove-all {
+    display: none;
+
+    &.show{
+        display: block;
+    }
+}
+
 .navUser-action {
     color: stencilColor("navUser-color");
     font-weight: fontWeight("bold");

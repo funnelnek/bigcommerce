@@ -27,7 +27,7 @@
             {{lang 'common.login_for_pricing'}}
         {{/or}}"
     {{/if}}>
-    <figure class="card-figure">
+    <figure class="card-figure doh">
         {{#if stock_level '===' 0}}
             {{#if show_cart_action}}
                 {{#if theme_settings.pdp_sold_out_label '===' ''}}
@@ -86,13 +86,15 @@
            {{#if settings.data_tag_enabled}} data-event-type="product-click" {{/if}}
         >
             <div class="card-img-container">
-                {{> components/common/responsive-img
-                    image=image
-                    class="card-image"
-                    fallback_size=theme_settings.productgallery_size
-                    lazyload=theme_settings.lazyload_mode
-                    default_image=theme_settings.default_image_product
-                }}
+                {{#each (limit images theme_settings.card_product_image_count)}}   
+                    {{> components/common/responsive-img
+                        image=.
+                        class="card-image"
+                        fallback_size=theme_settings.productgallery_size
+                        lazyload=theme_settings.lazyload_mode
+                        default_image=theme_settings.default_image_product
+                    }}
+                {{/each}}
             </div>
         </a>
 

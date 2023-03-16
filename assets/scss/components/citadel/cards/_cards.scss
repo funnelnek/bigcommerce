@@ -31,6 +31,15 @@
     padding: 3px;
     position: relative;
 
+    &.doh .card-image {
+        opacity: 0;
+        transition: opacity 0.25s ease-in;
+    
+        &.active {
+            opacity: 1;
+        }
+    }
+    
     &:hover {
         .card-figcaption {
             opacity: 1;
@@ -44,9 +53,9 @@
 }
 
 .card-img-container {
-
     @include lazy-loaded-padding("productgallery_size");
     max-width: get-width(stencilString("productgallery_size"));
+
 }
 
 .card-figcaption {
@@ -72,7 +81,7 @@
     font-family: "object-fit: contain;";
     max-height: 100%;
     object-fit: contain;
-    width: 100%;
+    width: 100%;    
 }
 
 .card-title {

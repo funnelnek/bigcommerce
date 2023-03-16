@@ -3,6 +3,9 @@ import CatalogPage from './catalog';
 import compareProducts from './global/compare-products';
 import FacetedSearch from './common/faceted-search';
 import { createTranslationDictionary } from '../theme/common/utils/translations-utils';
+import ProductCardImageGallery from './global/display-on-hover';
+import CategoryToCart from './common/category-to-cart';
+
 
 export default class Category extends CatalogPage {
     constructor(context) {
@@ -45,6 +48,8 @@ export default class Category extends CatalogPage {
 
         $('a.reset-btn').on('click', () => this.setLiveRegionsAttributes($('span.reset-message'), 'status', 'polite'));
 
+        new ProductCardImageGallery(this.context).init();
+        new CategoryToCart(this.context).init();
         this.ariaNotifyNoProducts();
     }
 
